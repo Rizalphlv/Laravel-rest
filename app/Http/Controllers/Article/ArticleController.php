@@ -31,7 +31,7 @@ class ArticleController extends Controller
             'subject' => 'required'
         ]);
 
-       $articles = auth()->user()->articles()->create([
+       $articles = auth()->user()->article()->create([
             'title'=> request('title'),
             'slug' => \Str::slug(request('title')),
             'body' => request('body'),
@@ -42,7 +42,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource. 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
